@@ -52,19 +52,19 @@
     </div>
   </nav>
 
-  <header class="hero-nw py-5">
+  <header class="hero-nw hero-nw-compact">
     <div class="container text-center">
       <span class="nw-badge-pill mb-2" data-i18n="planner_badge">Drag &amp; Drop Workspace</span>
-      <h1 class="hero-title mb-3" data-i18n="planner_title">Interactive 3-Day Trip Planner</h1>
-      <p class="lead text-muted mx-auto" style="max-width: 720px;" data-i18n="planner_subtitle">
+      <h1 class="hero-title mb-2" data-i18n="planner_title">Interactive 3-Day Trip Planner</h1>
+      <p class="text-muted mx-auto mb-0" style="max-width: 720px;" data-i18n="planner_subtitle">
         Drag destinations between the catalog pool and Day 1–3 columns (or use quick move buttons), track your budget live, and copy your shareable itinerary.
       </p>
     </div>
   </header>
 
-  <main class="py-5">
+  <main class="section-tight">
     <div class="container">
-      <div class="nw-card p-4 mb-4">
+      <div class="nw-card p-3 p-md-4 mb-4">
         <div class="row g-3 align-items-center">
           <div class="col-md-4 col-lg-3">
             <label for="budgetTargetInput" class="form-label small fw-bold mb-1" data-i18n="planner_budget_label">Target Budget (USD)</label>
@@ -124,6 +124,28 @@
               <span data-i18n="planner_day3">Day 3 — Scenic Finale</span>
             </h6>
             <div id="day3Column" class="planner-dropzone"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-lg-6">
+          <div class="nw-card p-4 h-100">
+            <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+              <i class="fa-solid fa-receipt text-accent"></i>
+              <span data-i18n="planner_breakdown_title">Day-by-Day Route Breakdown</span>
+            </h5>
+            <div id="dayBreakdownList"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="nw-card p-4 h-100">
+            <h5 class="fw-bold mb-1 d-flex align-items-center gap-2">
+              <i class="fa-solid fa-suitcase-rolling text-accent"></i>
+              <span data-i18n="planner_checklist_title">Smart Expedition Checklist</span>
+            </h5>
+            <p class="small text-muted mb-3" data-i18n="planner_checklist_hint">Auto-persisted in localStorage • Gear adapts to your planned stops</p>
+            <div id="smartPackingChecklist" class="d-flex flex-column gap-2"></div>
           </div>
         </div>
       </div>

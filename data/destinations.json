@@ -270,5 +270,39 @@
       "ru": ["Гондола на Талгарский перевал", "Вид на каток Медеу", "Горная эспрессо-терраса"],
       "kz": ["Талғар асуына аспалы жол", "Медеу мұз айдыны көрінісі", "Таулы кофе террасасы"]
     }
+  },
+  {
+    "id": "altyn-emel",
+    "category": "desert",
+    "image": "assets/images/img_nature.jpg",
+    "priceUsd": 210,
+    "durationDays": 2,
+    "rating": 4.9,
+    "coords": { "lat": 43.8833, "lon": 78.5833 },
+    "title": {
+      "en": "Altyn-Emel Singing Dune",
+      "ru": "Поющий бархан Алтын-Эмель",
+      "kz": "Алтынемел — Айғайқұм"
+    },
+    "region": {
+      "en": "Jetisu Region",
+      "ru": "Жетысу",
+      "kz": "Жетісу облысы"
+    },
+    "difficulty": {
+      "en": "Moderate",
+      "ru": "Средний",
+      "kz": "Орташа"
+    },
+    "description": {
+      "en": "Climb the 150-meter acoustic sand ridge, explore chalky Aktau mountains, and spot wild kulan herds.",
+      "ru": "Подъём на 150-метровый поющий бархан, белые горы Актау и наблюдение за дикими куланами.",
+      "kz": "150 метрлік Айғайқұм жотасына шығу, Ақтау бор таулары мен жабайы құландарды бақылау."
+    },
+    "highlights": {
+      "en": ["150m Singing Sand Ridge", "Aktau Chalk Canyon", "Katutau Volcanic Rocks"],
+      "ru": ["150-метровый Поющий бархан", "Меловые горы Актау", "Вулканические скалы Катутау"],
+      "kz": ["150 м Айғайқұм жотасы", "Ақтау бор шатқалы", "Қатутау жанартау жартастары"]
+    }
   }
 ]

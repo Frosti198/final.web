@@ -47,6 +47,75 @@
     updateBudgetUI(it);
   }
 
+  const CHECKLIST_KEY = "nomadway_checklist";
+
+  const PACKING_ITEMS = [
+    { id: "id_docs", categories: ["all"], label: { en: "Passport / National ID & Digital Offline Maps", ru: "Удостоверение / Паспорт и офлайн-карты", kz: "Жеке куәлік және офлайн-карталар" } },
+    { id: "powerbank", categories: ["all"], label: { en: "20,000mAh Power Bank & Charging Cable", ru: "Пауэрбанк 20 000 мА·ч и кабель", kz: "20 000 мА·сағ қуаттағыш және кабель" } },
+    { id: "windshell", categories: ["alpine", "nature"], label: { en: "Windproof Jacket & Thermal Mid-Layer (2,000m+)", ru: "Ветровка и тёплый слой для гор (2000м+)", kz: "Жел өткізбейтін күрте және жылы киім" } },
+    { id: "hiking_boots", categories: ["alpine", "nature", "desert"], label: { en: "Trail Footwear & Trekking Socks", ru: "Треккинговая обувь и носки", kz: "Таулы серуен аяқ киімі" } },
+    { id: "hydration", categories: ["desert"], label: { en: "2L Water Bottle, SPF 50+ & Sun Hat", ru: "Запас воды 2 л, SPF 50+ и головной убор", kz: "2 л су қоры, SPF 50+ және бас киім" } },
+    { id: "city_walk", categories: ["city"], label: { en: "Comfortable Walking Sneakers & Museum Pass", ru: "Удобная обувь для города и билеты", kz: "Қала серуеніне ыңғайлы аяқ киім" } }
+  ];
+
+  function getCheckedGear() {
+    try {
+      return JSON.parse(localStorage.getItem(CHECKLIST_KEY) || "{}");
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function renderPlannerExtras(it) {
+    const lang = window.NomadWay.getLang();
+    const $breakdown = $("#dayBreakdownList");
+    const $checklist = $("#smartPackingChecklist");
+
+    if ($breakdown.length) {
+      $breakdown.empty();
+      const dayLabels = {
+        day1: window.NomadWay.t("planner_day1"),
+        day2: window.NomadWay.t("planner_day2"),
+        day3: window.NomadWay.t("planner_day3")
+      };
+      ["day1", "day2", "day3"].forEach(day => {
+        const ids = it[day] || [];
+        const cost = ids.reduce((sum, id) => sum + (destinationsMap[id] ? destinationsMap[id].priceUsd : 0), 0);
+        const names = ids.map(id => (destinationsMap[id] ? destinationsMap[id].title[lang] : id)).join(", ") || "—";
+        $breakdown.append(`
+          <div class="d-flex justify-content-between align-items-start gap-2 py-2 border-bottom small">
+            <div>
+              <div class="fw-bold">${dayLabels[day]}</div>
+              <div class="text-muted" style="font-size: 0.78rem;">${names}</div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-accent fw-bold">$${cost}</span>
+          </div>
+        `);
+      });
+    }
+
+    if ($checklist.length) {
+      const activeCats = new Set(["all"]);
+      ["day1", "day2", "day3"].forEach(day => {
+        (it[day] || []).forEach(id => {
+          if (destinationsMap[id]) activeCats.add(destinationsMap[id].category);
+        });
+      });
+
+      const checkedState = getCheckedGear();
+      $checklist.empty();
+      PACKING_ITEMS.filter(item => item.categories.some(c => activeCats.has(c))).forEach(item => {
+        const isChecked = !!checkedState[item.id];
+        $checklist.append(`
+          <label class="checklist-item ${isChecked ? "is-checked" : ""} small">
+            <input type="checkbox" class="form-check-input mt-0 packing-check" data-gear="${item.id}" ${isChecked ? "checked" : ""}>
+            <span>${item.label[lang] || item.label.en}</span>
+          </label>
+        `);
+      });
+    }
+  }
+
   function updateBudgetUI(it) {
     const target = parseFloat($("#budgetTargetInput").val() || getTargetBudget());
     let spent = 0;
@@ -69,6 +138,7 @@
     } else {
       $bar.removeClass("bg-warning bg-danger").addClass("bg-success");
     }
+    renderPlannerExtras(it);
   }
 
   function renderBoard() {
@@ -188,6 +258,14 @@
       window.NomadWay.saveItinerary({ day1: [], day2: [], day3: [] });
       renderBoard();
       window.NomadWay.showToast("Trip board cleared.", "warning");
+    });
+
+    $(document).on("change", ".packing-check", function () {
+      const gearId = $(this).attr("data-gear");
+      const state = getCheckedGear();
+      state[gearId] = $(this).is(":checked");
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(state));
+      $(this).closest(".checklist-item").toggleClass("is-checked", state[gearId]);
     });
 
     $(document).on("nomadway:langchange", renderBoard);

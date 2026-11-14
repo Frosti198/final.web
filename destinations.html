@@ -52,19 +52,19 @@
     </div>
   </nav>
 
-  <header class="hero-nw py-5">
+  <header class="hero-nw hero-nw-compact">
     <div class="container text-center">
       <span class="nw-badge-pill mb-2" data-i18n="dest_page_badge">Dynamic JSON Catalog</span>
-      <h1 class="hero-title mb-3" data-i18n="dest_page_title">Curated Destinations &amp; Expeditions</h1>
-      <p class="lead text-muted mx-auto" style="max-width: 680px;" data-i18n="dest_page_subtitle">
+      <h1 class="hero-title mb-2" data-i18n="dest_page_title">Curated Destinations &amp; Expeditions</h1>
+      <p class="text-muted mx-auto mb-0" style="max-width: 680px;" data-i18n="dest_page_subtitle">
         Filter by terrain, search in real time, sort dynamically with animated transitions, and add stops directly to your Trip Planner.
       </p>
     </div>
   </header>
 
-  <main class="py-5">
+  <main class="section-tight">
     <div class="container">
-      <div class="row g-3 align-items-center mb-4">
+      <div class="row g-3 align-items-center mb-3">
         <div class="col-lg-6">
           <div class="d-flex flex-wrap gap-2" role="group" aria-label="Category filter">
             <button type="button" class="btn btn-outline-accent btn-sm rounded-pill px-3 fw-semibold dest-filter-btn active" data-category="all" data-i18n="filter_all">All</button>
@@ -91,11 +91,32 @@
         </div>
       </div>
 
+      <div class="highlight-mini-card d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 small">
+        <div>
+          <span class="text-muted" data-i18n="cat_summary_showing">Showing</span>:
+          <strong id="destCountBadge" class="text-accent">9</strong>
+        </div>
+        <div class="d-flex flex-wrap gap-4">
+          <span><span class="text-muted" data-i18n="cat_summary_avg_price">Avg Price</span>: <strong id="destAvgPrice">$180</strong></span>
+          <span><span class="text-muted" data-i18n="cat_summary_avg_rating">Avg Rating</span>: <strong id="destAvgRating">4.86</strong> <i class="fa-solid fa-star text-warning"></i></span>
+        </div>
+      </div>
+
       <div id="destinationsGrid" class="row g-4"></div>
 
       <div id="noDestFound" class="alert alert-info text-center mt-4 d-none" role="status">
         <i class="fa-solid fa-compass me-2"></i>
         <span data-i18n="no_results">No destinations match your current filter or search query.</span>
+      </div>
+
+      <div class="nw-card p-4 mt-4">
+        <h5 class="fw-bold mb-3" data-i18n="season_guide_title">Best Time to Visit by Region</h5>
+        <div class="row g-2 small">
+          <div class="col-md-6"><div class="highlight-mini-card" data-i18n="season_spring">Spring (Apr–May): Charyn, Altyn-Emel, Turkestan &amp; Mangystau</div></div>
+          <div class="col-md-6"><div class="highlight-mini-card" data-i18n="season_summer">Summer (Jun–Aug): Kolsai, Kaindy, Big Almaty Lake &amp; Burabay</div></div>
+          <div class="col-md-6"><div class="highlight-mini-card" data-i18n="season_autumn">Autumn (Sep–Oct): Golden Tian Shan &amp; Astana Urban Walks</div></div>
+          <div class="col-md-6"><div class="highlight-mini-card" data-i18n="season_winter">Winter (Dec–Mar): Shymbulak Ridge &amp; Medeu Alpine Complex</div></div>
+        </div>
       </div>
     </div>
   </main>

@@ -50,12 +50,13 @@ def run_verification():
                 else None,
             )
 
-            # 1. Home page (EN, Light) + Counters + Custom Carousel
+            # 1. Home page (EN, Light) + Counters + Custom Carousel + Featured 3
             page.goto(f"{base_url}/index.html", wait_until="networkidle")
             page.wait_for_timeout(700)
+            assert page.locator("#homeFeaturedGrid article").count() == 3
             page.locator(".nw-carousel-next").click()
             page.wait_for_timeout(400)
-            page.evaluate("window.scrollTo(0, 500)")
+            page.evaluate("window.scrollTo(0, 620)")
             page.wait_for_timeout(1600)
             page.evaluate("window.scrollTo(0, 0)")
             page.wait_for_timeout(300)
@@ -69,7 +70,7 @@ def run_verification():
             assert page.evaluate("localStorage.getItem('nomadway_lang')") == "kz"
             page.locator("#quickMatchBtn").click()
             page.wait_for_timeout(350)
-            page.evaluate("window.scrollTo(0, 820)")
+            page.evaluate("window.scrollTo(0, 1450)")
             page.wait_for_timeout(450)
             page.screenshot(path=os.path.join(SCREENSHOTS_DIR, "02_home_dark_kz.png"))
 
@@ -78,10 +79,11 @@ def run_verification():
             page.locator('.lang-switch-btn[data-lang="en"]').click()
             page.wait_for_timeout(250)
 
-            # 3. Destinations Catalog + Search/Sort + Custom Modal
+            # 3. Destinations Catalog (9 cards = 3x3 grid) + Search/Sort + Custom Modal
             page.goto(f"{base_url}/destinations.html", wait_until="networkidle")
             page.wait_for_timeout(600)
-            assert page.locator("#destinationsGrid article").count() == 8
+            assert page.locator("#destinationsGrid article").count() == 9
+            assert page.locator("#destCountBadge").inner_text().strip() == "9"
             page.locator("#destSortSelect").select_option("price-asc")
             page.wait_for_timeout(450)
             page.screenshot(path=os.path.join(SCREENSHOTS_DIR, "03_destinations_catalog.png"))
@@ -96,14 +98,19 @@ def run_verification():
             page.locator("#customModalCloseBtn").click()
             page.wait_for_timeout(300)
 
-            # 4. Trip Planner (Drag/Drop + Quick Move + Budget + Copy)
+            # 4. Trip Planner (Drag/Drop + Quick Move + Budget + Checklist + Copy)
             page.goto(f"{base_url}/planner.html", wait_until="networkidle")
             page.wait_for_timeout(500)
             page.locator("#loadSampleTripBtn").click()
             page.wait_for_timeout(400)
             assert page.locator("#day1Column .planner-card").count() >= 1
+            assert page.locator("#dayBreakdownList > div").count() == 3
+            assert page.locator("#smartPackingChecklist .packing-check").count() >= 3
+            page.locator("#smartPackingChecklist .packing-check").first.check()
             page.locator("#copyItineraryBtn").click()
             page.wait_for_timeout(350)
+            page.evaluate("window.scrollTo(0, 260)")
+            page.wait_for_timeout(200)
             page.screenshot(path=os.path.join(SCREENSHOTS_DIR, "05_planner_drag_drop.png"))
 
             # 5. Guides & Quiz in RU
@@ -172,7 +179,7 @@ def run_verification():
             file_page.on("pageerror", lambda err: file_errors.append(f"FILE PAGEERROR: {err}"))
             file_page.goto(f"file://{BASE_DIR}/destinations.html", wait_until="networkidle")
             file_page.wait_for_timeout(500)
-            assert file_page.locator("#destinationsGrid article").count() == 8
+            assert file_page.locator("#destinationsGrid article").count() == 9
             assert not file_errors, f"file:// errors: {file_errors}"
             file_page.close()
 

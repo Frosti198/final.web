@@ -36,6 +36,18 @@
     else if (sortBy === "rating") filtered.sort((a, b) => b.rating - a.rating);
     else if (sortBy === "duration") filtered.sort((a, b) => a.durationDays - b.durationDays);
 
+    if ($("#destCountBadge").length) {
+      const avgPrice = filtered.length
+        ? Math.round(filtered.reduce((sum, d) => sum + d.priceUsd, 0) / filtered.length)
+        : 0;
+      const avgRating = filtered.length
+        ? (filtered.reduce((sum, d) => sum + d.rating, 0) / filtered.length).toFixed(2)
+        : "0.0";
+      $("#destCountBadge").text(filtered.length);
+      $("#destAvgPrice").text(`$${avgPrice}`);
+      $("#destAvgRating").text(avgRating);
+    }
+
     $grid.stop(true, true).fadeOut(130, function () {
       $grid.empty();
 

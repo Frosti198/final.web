@@ -155,11 +155,64 @@
     checkAndAnimate();
   }
 
-  async function initHomeFinder() {
+  async function initFeaturedDestinations(destinations) {
+    const $grid = $("#homeFeaturedGrid");
+    if (!$grid.length) return;
+
+    function renderFeatured() {
+      const lang = window.NomadWay.getLang();
+      const topThree = [...destinations].sort((a, b) => b.rating - a.rating).slice(0, 3);
+      $grid.empty();
+
+      topThree.forEach(item => {
+        $grid.append(`
+          <div class="col-md-6 col-lg-4">
+            <article class="nw-card nw-card-hover h-100 d-flex flex-column">
+              <div class="dest-thumb">
+                <img src="${item.image}" alt="${item.title[lang]}" loading="lazy">
+                <span class="dest-cat-pill">${item.region[lang]}</span>
+                <span class="dest-price-pill">$${item.priceUsd}</span>
+              </div>
+              <div class="p-3 p-md-4 flex-grow-1 d-flex flex-column">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span><i class="fa-regular fa-clock me-1 text-accent"></i>${item.durationDays}d</span>
+                  <span><i class="fa-solid fa-star text-warning me-1"></i>${item.rating.toFixed(1)}</span>
+                </div>
+                <h5 class="fw-bold mb-2">${item.title[lang]}</h5>
+                <p class="small text-muted mb-3 flex-grow-1">${item.description[lang]}</p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="destinations.html" class="btn btn-outline-accent btn-sm rounded-pill flex-grow-1 fw-semibold">
+                    ${window.NomadWay.t("btn_details")}
+                  </a>
+                  <button type="button" class="btn btn-accent btn-sm rounded-pill px-3 fw-semibold home-add-planner" data-id="${item.id}">
+                    <i class="fa-solid fa-plus me-1"></i>${window.NomadWay.t("btn_add_trip")}
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        `);
+      });
+    }
+
+    renderFeatured();
+    $(document).on("click", ".home-add-planner", function () {
+      const id = $(this).attr("data-id");
+      const item = destinations.find(d => d.id === id);
+      const lang = window.NomadWay.getLang();
+      const res = window.NomadWay.addDestinationToItinerary(id);
+      if (res.added) {
+        window.NomadWay.showToast(`${item.title[lang]} → ${res.day.toUpperCase()}`, "success");
+      } else {
+        window.NomadWay.showToast(`${item.title[lang]} is already in your Trip Planner.`, "warning");
+      }
+    });
+    $(document).on("nomadway:langchange", renderFeatured);
+  }
+
+  async function initHomeFinder(destinations) {
     const $btn = $("#quickMatchBtn");
     if (!$btn.length) return;
-
-    const destinations = await window.loadJsonResource("data/destinations.json", "destinations");
 
     function renderMatch() {
       const cat = $("#finderTerrain").val();
@@ -170,7 +223,7 @@
       const pick = (matches.length ? matches : destinations.filter(d => d.category === cat))[0] || destinations[0];
 
       const html = `
-        <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 p-3 rounded-4 border mt-4" style="background: var(--bg-surface-alt);">
+        <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 p-3 rounded-4 border mt-3" style="background: var(--bg-surface-alt);">
           <img src="${pick.image}" alt="${pick.title[lang]}" class="rounded-3" style="width:110px;height:80px;object-fit:cover;">
           <div class="flex-grow-1">
             <div class="small fw-bold text-accent text-uppercase">${pick.region[lang]} &bull; $${pick.priceUsd}</div>
@@ -191,10 +244,12 @@
     });
   }
 
-  $(document).ready(function () {
+  $(document).ready(async function () {
     initCustomCarousel();
     initWeatherWidget();
     initAnimatedCounters();
-    initHomeFinder();
+    const destinations = await window.loadJsonResource("data/destinations.json", "destinations");
+    initFeaturedDestinations(destinations);
+    initHomeFinder(destinations);
   });
 })(window, jQuery);

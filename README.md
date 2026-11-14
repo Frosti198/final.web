@@ -55,7 +55,7 @@ final_project/
 │   ├── guides.js                # JSON Guides & Interactive 5-Question Quiz
 │   └── contact.js               # RegExp/Date validation + Canvas Confetti burst
 ├── data/
-│   ├── destinations.json        # 8 localized destinations with coordinates, ratings, prices
+│   ├── destinations.json        # 9 localized destinations with coordinates, ratings, prices
 │   ├── guides.json              # Localized guides & 5 quiz questions
 │   ├── translations.json        # Full UI dictionary (EN / RU / KZ)
 │   └── fallback-data.js         # CORS-safe fallback when opened directly via file://
@@ -81,9 +81,9 @@ final_project/
 | **Code Quality & Optimization** | 5% | Strict separation of structure (HTML), presentation (CSS), data (JSON), and behavior (JS); `loading="lazy"` on destination images; zero console/HTTP errors. |
 
 ### C. Bonus Features Implemented (Cap: +10%)
-1. **JSON / Public API Integration (+5%):** Dynamic loading of `data/destinations.json`, `data/guides.json`, and `data/translations.json` via `fetch()` (with transparent `file://` fallback), plus live **Open-Meteo Weather REST API** telemetry for Astana, Almaty, and Aktau.
-2. **Multi-Language Localization EN / RU / KZ (+5%):** Full site-wide dynamic translation loaded from `translations.json` and persisted in `localStorage` (`nomadway_lang`), re-rendering both static DOM elements and JSON-generated cards/modals/quizzes.
-3. **Drag & Drop Interaction (+4%):** 3-day Trip Planner built with **jQuery UI `.sortable({ connectWith: ".planner-dropzone" })`** allowing cards to be dragged across Available Stops and Day 1–3 columns (with quick-move buttons for mobile/keyboard accessibility) and persisted in `localStorage`.
+1. **JSON / Public API Integration (+5%):** Dynamic loading of `data/destinations.json` (9 destinations), `data/guides.json`, and `data/translations.json` via `fetch()` (with transparent `file://` fallback), plus live **Open-Meteo Weather REST API** telemetry for Astana, Almaty, and Aktau.
+2. **Multi-Language Localization EN / RU / KZ (+5%):** Full site-wide dynamic translation loaded from `translations.json` and persisted in `localStorage` (`nomadway_lang`), re-rendering both static DOM elements, `<select>` options, and JSON-generated cards/modals/checklists/quizzes.
+3. **Drag & Drop Interaction (+4%):** 3-day Trip Planner built with **jQuery UI `.sortable({ connectWith: ".planner-dropzone" })`** allowing cards to be dragged across Available Stops and Day 1–3 columns (with quick-move buttons for mobile/keyboard accessibility), live Day-by-Day Breakdown, and a **Smart Expedition Checklist** persisted in `localStorage`.
 4. **Custom Carousel & Custom Modal without Bootstrap JS (+4%):** Both the hero image slider (`nwHeroCarousel`) and destination detail dialog (`nwCustomModalBackdrop`) are engineered from scratch using JS/jQuery state logic, transitions, dot indicators, hover pause, and Escape/backdrop close.
 5. **Dark / Light Mode (+3%) & Live Accent Customizer (+3%):** Global CSS custom property themes (`data-theme="dark"` and Indigo/Emerald/Amber accents) saved in `localStorage`.
 6. **Search / Filter (+3%) & Dynamic Animated Sorting (+3%):** Real-time keyword search, terrain category filtering, and price/rating/duration sorting with jQuery fade transitions.

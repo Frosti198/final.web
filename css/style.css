@@ -212,7 +212,58 @@ body {
               radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.1), transparent 52%),
               var(--bg-surface);
   border-bottom: 1px solid var(--border-color);
-  padding: 4.5rem 0 3.75rem;
+  padding: 3.5rem 0 3rem;
+}
+
+.hero-nw-compact {
+  padding: 2.5rem 0 2.1rem;
+}
+
+.section-tight {
+  padding: 2.75rem 0;
+}
+
+.step-badge-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-mini-card {
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+  transition: var(--transition-base);
+}
+
+.highlight-mini-card:hover {
+  border-color: var(--accent-primary);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface-alt);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.checklist-item.is-checked {
+  opacity: 0.72;
+  text-decoration: line-through;
 }
 
 .nw-badge-pill {
@@ -453,18 +504,18 @@ body {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: 1rem;
-  padding: 1rem;
-  min-height: 360px;
+  padding: 0.9rem;
+  min-height: 295px;
   display: flex;
   flex-direction: column;
 }
 
 .planner-dropzone {
   flex: 1;
-  min-height: 270px;
+  min-height: 220px;
   border: 2px dashed var(--border-color);
   border-radius: 0.85rem;
-  padding: 0.75rem;
+  padding: 0.65rem;
   background: var(--bg-surface-alt);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }

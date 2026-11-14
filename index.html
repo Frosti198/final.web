@@ -123,23 +123,57 @@
   </header>
 
   <main>
-    <section class="py-5">
+    <section class="section-tight border-bottom" style="background: var(--bg-surface);">
       <div class="container">
-        <div class="nw-card p-4 p-md-5 reveal-on-scroll">
-          <div class="row align-items-center g-4">
-            <div class="col-lg-6">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge bg-success" id="weatherStatusBadge">Live API</span>
-                <span class="small text-muted" data-i18n="weather_subtitle">Powered by Open-Meteo Public API</span>
-              </div>
-              <h2 class="fw-bold mb-2" data-i18n="weather_title">Live Weather Telemetry</h2>
-              <div class="d-flex flex-wrap gap-2 mt-3">
-                <button type="button" class="weather-chip active" data-city="astana">Astana</button>
-                <button type="button" class="weather-chip" data-city="almaty">Almaty</button>
-                <button type="button" class="weather-chip" data-city="aktau">Aktau</button>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="highlight-mini-card h-100 d-flex align-items-start gap-3">
+              <span class="step-badge-num">1</span>
+              <div>
+                <h6 class="fw-bold mb-1" data-i18n="step1_title">1. Browse JSON Routes</h6>
+                <p class="small text-muted mb-0" data-i18n="step1_desc">Filter 9 curated regions by terrain, rating, and live price.</p>
               </div>
             </div>
-            <div class="col-lg-6">
+          </div>
+          <div class="col-md-4">
+            <div class="highlight-mini-card h-100 d-flex align-items-start gap-3">
+              <span class="step-badge-num">2</span>
+              <div>
+                <h6 class="fw-bold mb-1" data-i18n="step2_title">2. Build 3-Day Plan</h6>
+                <p class="small text-muted mb-0" data-i18n="step2_desc">Drag &amp; drop stops into Day 1–3 with instant budget tracking.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="highlight-mini-card h-100 d-flex align-items-start gap-3">
+              <span class="step-badge-num">3</span>
+              <div>
+                <h6 class="fw-bold mb-1" data-i18n="step3_title">3. Live Weather &amp; Go</h6>
+                <p class="small text-muted mb-0" data-i18n="step3_desc">Verify real-time Open-Meteo telemetry and reserve in 1 minute.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="nw-card p-4 h-100 d-flex flex-column justify-content-between reveal-on-scroll">
+              <div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge bg-success" id="weatherStatusBadge">Live API</span>
+                  <span class="small text-muted" data-i18n="weather_subtitle">Powered by Open-Meteo Public API</span>
+                </div>
+                <h2 class="fw-bold mb-2" data-i18n="weather_title">Live Weather Telemetry</h2>
+                <div class="d-flex flex-wrap gap-2 mt-3 mb-4">
+                  <button type="button" class="weather-chip active" data-city="astana">Astana</button>
+                  <button type="button" class="weather-chip" data-city="almaty">Almaty</button>
+                  <button type="button" class="weather-chip" data-city="aktau">Aktau</button>
+                </div>
+              </div>
               <div class="p-4 rounded-4 border d-flex align-items-center justify-content-between flex-wrap gap-3" style="background: var(--bg-surface-alt);">
                 <div>
                   <div class="small text-muted fw-semibold text-uppercase" id="weatherCityTitle">Astana</div>
@@ -149,6 +183,35 @@
                 <div class="text-end">
                   <div class="small text-muted" data-i18n="weather_wind">Wind</div>
                   <div class="fs-4 fw-bold" id="weatherWindVal">-- km/h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="nw-card p-4 h-100 reveal-on-scroll">
+              <h5 class="fw-bold mb-3" data-i18n="weather_highlights_title">Why Travelers Pick NomadWay</h5>
+              <div class="d-flex flex-column gap-3">
+                <div class="highlight-mini-card d-flex align-items-start gap-3">
+                  <i class="fa-solid fa-route text-accent fs-5 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold mb-1 small" data-i18n="wh_1_title">Verified Local Routes</h6>
+                    <p class="small text-muted mb-0" data-i18n="wh_1_desc">GPS-checked trails across 14 regions with transparent pricing.</p>
+                  </div>
+                </div>
+                <div class="highlight-mini-card d-flex align-items-start gap-3">
+                  <i class="fa-solid fa-language text-accent fs-5 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold mb-1 small" data-i18n="wh_2_title">Bilingual Field Guides</h6>
+                    <p class="small text-muted mb-0" data-i18n="wh_2_desc">Certified specialists fluent in English, Russian, and Kazakh.</p>
+                  </div>
+                </div>
+                <div class="highlight-mini-card d-flex align-items-start gap-3">
+                  <i class="fa-solid fa-cloud-sun-rain text-accent fs-5 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold mb-1 small" data-i18n="wh_3_title">Adaptive Weather Routing</h6>
+                    <p class="small text-muted mb-0" data-i18n="wh_3_desc">Instant itinerary adjustment when mountain conditions shift.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,28 +243,43 @@
       </div>
     </section>
 
-    <section class="py-5">
+    <section class="section-tight">
       <div class="container">
-        <div class="nw-card p-4 p-md-5 reveal-on-scroll">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-4">
+          <div>
+            <span class="nw-badge-pill mb-2" data-i18n="featured_badge">Top Rated Picks</span>
+            <h2 class="fw-bold mb-0" data-i18n="featured_title">Most Popular Expeditions</h2>
+          </div>
+          <a href="destinations.html" class="btn btn-outline-accent btn-sm rounded-pill px-4 fw-semibold">
+            <span data-i18n="featured_view_all">View All 9 Routes</span> <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+        <div id="homeFeaturedGrid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <section class="section-tight pt-0">
+      <div class="container">
+        <div class="nw-card p-4 reveal-on-scroll mb-4">
           <span class="nw-badge-pill mb-2" data-i18n="quiz_mini_badge">Interactive Finder</span>
-          <h2 class="fw-bold mb-2" data-i18n="quiz_mini_title">Find Your Ideal Route in 15 Seconds</h2>
-          <p class="text-muted mb-4" data-i18n="quiz_mini_desc">Pick your preferred landscape and pace — our JS engine matches you with the highest-rated destination.</p>
+          <h3 class="fw-bold mb-1" data-i18n="quiz_mini_title">Find Your Ideal Route in 15 Seconds</h3>
+          <p class="small text-muted mb-3" data-i18n="quiz_mini_desc">Pick your preferred landscape and pace — our JS engine matches you with the highest-rated destination.</p>
           <div class="row g-3 align-items-end">
             <div class="col-md-5">
               <label for="finderTerrain" class="form-label small fw-bold" data-i18n="quiz_q_terrain">Preferred Landscape</label>
               <select id="finderTerrain" class="form-select">
-                <option value="nature">Nature &amp; Lakes</option>
-                <option value="desert">Canyons &amp; Desert</option>
-                <option value="city">City &amp; Culture</option>
-                <option value="alpine">Alpine Peaks</option>
+                <option value="nature" data-i18n="filter_nature">Nature &amp; Lakes</option>
+                <option value="desert" data-i18n="filter_desert">Canyons &amp; Desert</option>
+                <option value="city" data-i18n="filter_city">City &amp; Culture</option>
+                <option value="alpine" data-i18n="filter_alpine">Alpine Peaks</option>
               </select>
             </div>
             <div class="col-md-4">
               <label for="finderDays" class="form-label small fw-bold" data-i18n="quiz_q_pace">Trip Duration</label>
               <select id="finderDays" class="form-select">
-                <option value="1">1 Day Express</option>
-                <option value="2" selected>Up to 2 Days</option>
-                <option value="3">3 Days Expedition</option>
+                <option value="1" data-i18n="opt_day_1">1 Day Express</option>
+                <option value="2" selected data-i18n="opt_day_2">Up to 2 Days</option>
+                <option value="3" data-i18n="opt_day_3">3 Days Expedition</option>
               </select>
             </div>
             <div class="col-md-3">
@@ -209,6 +287,38 @@
             </div>
           </div>
           <div id="quickMatchResult"></div>
+        </div>
+
+        <div class="pt-2">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+              <span class="nw-badge-pill mb-1" data-i18n="reviews_badge">Traveler Feedback</span>
+              <h3 class="fw-bold mb-0" data-i18n="reviews_title">Recent Expedition Stories</h3>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="nw-card p-3 p-md-4 h-100">
+                <div class="text-warning small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="small text-muted mb-3" data-i18n="rev_1_text">"The 3-day Drag &amp; Drop planner and live weather telemetry made our Almaty–Charyn loop effortless."</p>
+                <div class="fw-bold small">Aigerim T. &bull; <span class="text-muted fw-normal">Almaty</span></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="nw-card p-3 p-md-4 h-100">
+                <div class="text-warning small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="small text-muted mb-3" data-i18n="rev_2_text">"Instant Kazakh/Russian language toggle helped our whole family coordinate Burabay stops together."</p>
+                <div class="fw-bold small">Daniyar K. &bull; <span class="text-muted fw-normal">Astana</span></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="nw-card p-3 p-md-4 h-100">
+                <div class="text-warning small mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="small text-muted mb-3" data-i18n="rev_3_text">"Clear budget progress bar and custom checklist saved us hours before departing to Mangystau."</p>
+                <div class="fw-bold small">Elena M. &bull; <span class="text-muted fw-normal">Aktau</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
