@@ -1,0 +1,130 @@
+{
+  "guides": [
+    {
+      "id": "guide-askar",
+      "name": "Askar Nurmukhammed",
+      "image": "assets/images/photo.jpg",
+      "languages": ["EN", "RU", "KZ"],
+      "experienceYears": 4,
+      "rating": 4.95,
+      "role": {
+        "en": "Lead Route Architect & Digital Nomad",
+        "ru": "Ведущий архитектор маршрутов",
+        "kz": "Жетекші маршрут сәулетшісі"
+      },
+      "specialty": {
+        "en": "Astana Urban Architecture & Burabay Trails",
+        "ru": "Архитектура Астаны и тропы Бурабая",
+        "kz": "Астана сәулеті және Бурабай соқпақтары"
+      }
+    },
+    {
+      "id": "guide-madina",
+      "name": "Madina Suleimenova",
+      "image": "assets/images/img_recipes.jpg",
+      "languages": ["EN", "KZ"],
+      "experienceYears": 6,
+      "rating": 4.92,
+      "role": {
+        "en": "Alpine & Eco-Tourism Specialist",
+        "ru": "Специалист по горному эко-туризму",
+        "kz": "Таулы эко-туризм маманы"
+      },
+      "specialty": {
+        "en": "Kolsai Lakes, Kaindy & Ile-Alatau Glaciers",
+        "ru": "Озёра Кольсай, Каинды и ледники Иле-Алатау",
+        "kz": "Көлсай, Қайыңды және Іле Алатауы мұздықтары"
+      }
+    },
+    {
+      "id": "guide-timur",
+      "name": "Timur Kassenov",
+      "image": "assets/images/img_books.jpg",
+      "languages": ["EN", "RU"],
+      "experienceYears": 7,
+      "rating": 4.89,
+      "role": {
+        "en": "Silk Road & Desert Expedition Lead",
+        "ru": "Гид по Шёлковому пути и пустыням",
+        "kz": "Ұлы Жібек жолы және шөл экспедициясының гиді"
+      },
+      "specialty": {
+        "en": "Turkestan UNESCO Sites & Mangystau Canyons",
+        "ru": "Памятники Туркестана и каньоны Мангистау",
+        "kz": "Түркістан ескерткіштері және Маңғыстау шатқалдары"
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "id": 1,
+      "question": {
+        "en": "Which season offers the mildest trekking weather across Charyn Canyon and Mangystau?",
+        "ru": "Какой сезон лучше всего подходит для трекинга в Чарыне и Мангистау?",
+        "kz": "Шарын шатқалы мен Маңғыстауда жаяу саяхатқа ең қолайлы маусым қайсы?"
+      },
+      "options": {
+        "en": ["Mid-July midday heat", "Spring (April–May) & Autumn (September–October)", "January blizzard"],
+        "ru": ["Полдень середины июля", "Весна (апрель–май) и осень (сентябрь–октябрь)", "Январская метель"],
+        "kz": ["Шілде айының түскі ыстығы", "Көктем (сәуір–мамыр) және күз (қыркүйек–қазан)", "Қаңтардағы боран"]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": 2,
+      "question": {
+        "en": "What altitude does Big Almaty Lake sit at above sea level?",
+        "ru": "На какой высоте над уровнем моря находится Большое Алматинское озеро?",
+        "kz": "Үлкен Алматы көлі теңіз деңгейінен қандай биіктікте орналасқан?"
+      },
+      "options": {
+        "en": ["~500 meters", "~2,511 meters", "~6,900 meters"],
+        "ru": ["~500 метров", "~2 511 метров", "~6 900 метров"],
+        "kz": ["~500 метр", "~2 511 метр", "~6 900 метр"]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": 3,
+      "question": {
+        "en": "Which UNESCO monument anchors the spiritual center of Turkestan?",
+        "ru": "Какой памятник ЮНЕСКО является духовным центром Туркестана?",
+        "kz": "Түркістанның рухани орталығы саналатын ЮНЕСКО ескерткіші қайсы?"
+      },
+      "options": {
+        "en": ["Mausoleum of Khoja Ahmed Yasawi", "Baiterek Tower", "Medeu Ice Complex"],
+        "ru": ["Мавзолей Ходжи Ахмеда Ясави", "Башня Байтерек", "Комплекс Медеу"],
+        "kz": ["Қожа Ахмет Ясауи кесенесі", "Бәйтерек мұнарасы", "Медеу мұз айдыны"]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": 4,
+      "question": {
+        "en": "Why is Lake Kaindy famous among photographers worldwide?",
+        "ru": "Чем озеро Каинды прославилось среди фотографов всего мира?",
+        "kz": "Қайыңды көлі әлем фотографтары арасында несімен танымал?"
+      },
+      "options": {
+        "en": ["Submerged spruce trunks rising out of turquoise water", "Lava geysers", "Floating sand dunes"],
+        "ru": ["Затопленными стволами елей в бирюзовой воде", "Лавовыми гейзерами", "Плавучими дюнами"],
+        "kz": ["Көгілдір судан шығып тұрған шырша діңдерімен", "Лава гейзерлерімен", "Жүзбелі құм төбелерімен"]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": 5,
+      "question": {
+        "en": "Which essential rule ensures safe mountain hiking in Ile-Alatau?",
+        "ru": "Какое правило обязательно для безопасного похода в горах Иле-Алатау?",
+        "kz": "Іле Алатауы тауларында қауіпсіз серуендеу үшін қай ереже маңызды?"
+      },
+      "options": {
+        "en": ["Bring layered windproof gear, offline maps, and extra water", "Wear dress shoes and leave after sunset", "Skip checking weather telemetry"],
+        "ru": ["Взять многослойную одежду, офлайн-карты и запас воды", "Выйти на закате в городской обуви", "Не проверять прогноз погоды"],
+        "kz": ["Қабатты жел өткізбейтін киім, офлайн карта және су алу", "Күн батқанда жеңіл аяқ киіммен шығу", "Ауа райын тексермеу"]
+      },
+      "correctIndex": 0
+    }
+  ]
+}

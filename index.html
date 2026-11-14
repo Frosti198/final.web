@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-accent="indigo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomadWay — Smart Travel, Weather &amp; Interactive Trip Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2746%27 fill=%27%234f46e5%27/%3E%3Ctext x=%2750%27 y=%2765%27 font-size=%2754%27 text-anchor=%27middle%27 fill=%27white%27%3EN%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nwPreloader" class="nw-preloader" aria-hidden="true">
+    <div class="nw-spinner"></div>
+    <div class="small fw-bold text-uppercase tracking-wide text-accent">NomadWay OS</div>
+  </div>
+  <div id="nwScrollProgress" class="nw-scroll-progress" aria-hidden="true"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-nw" aria-label="Primary Navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <i class="fa-solid fa-compass text-accent"></i>
+        <span>Nomad<span class="text-accent">Way</span></span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
+          <li class="nav-item">
+            <a class="nav-link d-inline-flex align-items-center gap-1" href="planner.html">
+              <span data-i18n="nav_planner">Trip Planner</span>
+              <span class="badge rounded-pill bg-primary planner-count-badge">2</span>
+            </a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="guides.html" data-i18n="nav_guides">Guides &amp; Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">Book Tour</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <div class="btn-group lang-btn-group" role="group" aria-label="Language switcher">
+            <button type="button" class="btn btn-sm lang-switch-btn active" data-lang="en">EN</button>
+            <button type="button" class="btn btn-sm lang-switch-btn" data-lang="ru">RU</button>
+            <button type="button" class="btn btn-sm lang-switch-btn" data-lang="kz">KZ</button>
+          </div>
+          <button type="button" id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle dark or light theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-nw">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-6">
+          <div class="nw-badge-pill mb-3">
+            <i class="fa-solid fa-route"></i>
+            <span data-i18n="hero_badge">Astana IT University • Web Technologies 1 Final Project</span>
+          </div>
+          <h1 class="hero-title mb-3">
+            <span class="hero-gradient-text" data-i18n="hero_title">Discover Kazakhstan With Real-Time Precision</span>
+          </h1>
+          <p class="lead text-muted mb-4" data-i18n="hero_subtitle">
+            Explore curated routes across canyons, alpine lakes, and futuristic skylines. Check live weather telemetry, customize your 3-day drag-and-drop itinerary, and book with local specialists.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="destinations.html" class="btn btn-accent rounded-pill px-4 py-2 fw-semibold shadow-sm">
+              <i class="fa-solid fa-map-location-dot me-2"></i><span data-i18n="hero_cta_explore">Explore Destinations</span>
+            </a>
+            <a href="planner.html" class="btn btn-outline-accent rounded-pill px-4 py-2 fw-semibold">
+              <i class="fa-solid fa-calendar-days me-2"></i><span data-i18n="hero_cta_planner">Open Trip Planner</span>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-4 pt-3 border-top small text-muted">
+            <span><i class="fa-solid fa-user-graduate text-accent me-1"></i> Askar Nurmukhammed</span>
+            <span><i class="fa-solid fa-layer-group text-accent me-1"></i> Group IT-2514</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div id="nwHeroCarousel" class="nw-carousel" aria-roledescription="carousel" aria-label="Featured Kazakhstan Destinations">
+            <div class="nw-carousel-dots">
+              <button type="button" class="nw-carousel-dot is-active" data-slide="0" aria-label="Slide 1"></button>
+              <button type="button" class="nw-carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+              <button type="button" class="nw-carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="nw-carousel-track">
+              <div class="nw-carousel-slide is-active">
+                <img src="assets/images/img_forest.jpg" alt="Burabay Pine Sanctuary">
+                <div class="nw-carousel-caption">
+                  <h5 class="fw-bold mb-1">Burabay Pine Sanctuary</h5>
+                  <p class="small text-light opacity-75 mb-0">Granite cliffs and pine-rimmed lakes just 3 hours north of Astana.</p>
+                </div>
+              </div>
+              <div class="nw-carousel-slide">
+                <img src="assets/images/img_nature.jpg" alt="Charyn Canyon Expedition">
+                <div class="nw-carousel-caption">
+                  <h5 class="fw-bold mb-1">Charyn Canyon Expedition</h5>
+                  <p class="small text-light opacity-75 mb-0">12-million-year-old red sandstone towers in the Valley of Castles.</p>
+                </div>
+              </div>
+              <div class="nw-carousel-slide">
+                <img src="assets/images/img_city.jpg" alt="Astana Futuristic Skyline">
+                <div class="nw-carousel-caption">
+                  <h5 class="fw-bold mb-1">Astana Futuristic Skyline</h5>
+                  <p class="small text-light opacity-75 mb-0">EXPO Nur Alem, Baiterek Tower, and Astana IT University innovation hub.</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="nw-carousel-btn nw-carousel-prev" aria-label="Previous slide">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" class="nw-carousel-btn nw-carousel-next" aria-label="Next slide">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-5">
+      <div class="container">
+        <div class="nw-card p-4 p-md-5 reveal-on-scroll">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-success" id="weatherStatusBadge">Live API</span>
+                <span class="small text-muted" data-i18n="weather_subtitle">Powered by Open-Meteo Public API</span>
+              </div>
+              <h2 class="fw-bold mb-2" data-i18n="weather_title">Live Weather Telemetry</h2>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button type="button" class="weather-chip active" data-city="astana">Astana</button>
+                <button type="button" class="weather-chip" data-city="almaty">Almaty</button>
+                <button type="button" class="weather-chip" data-city="aktau">Aktau</button>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="p-4 rounded-4 border d-flex align-items-center justify-content-between flex-wrap gap-3" style="background: var(--bg-surface-alt);">
+                <div>
+                  <div class="small text-muted fw-semibold text-uppercase" id="weatherCityTitle">Astana</div>
+                  <div class="display-5 fw-bold text-accent" id="weatherTemp">--°C</div>
+                  <div class="small fw-medium" id="weatherCondition">Loading...</div>
+                </div>
+                <div class="text-end">
+                  <div class="small text-muted" data-i18n="weather_wind">Wind</div>
+                  <div class="fs-4 fw-bold" id="weatherWindVal">-- km/h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3">
+            <div class="stat-value"><span class="nw-counter" data-target="28" data-decimals="0">0</span>+</div>
+            <div class="small text-light opacity-75" data-i18n="stats_routes">Curated Expeditions</div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-value"><span class="nw-counter" data-target="1420" data-decimals="0">0</span>+</div>
+            <div class="small text-light opacity-75" data-i18n="stats_travelers">Happy Travelers</div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-value"><span class="nw-counter" data-target="14" data-decimals="0">0</span></div>
+            <div class="small text-light opacity-75" data-i18n="stats_regions">Kazakhstan Regions</div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-value"><span class="nw-counter" data-target="4.9" data-decimals="1">0.0</span></div>
+            <div class="small text-light opacity-75" data-i18n="stats_rating">Avg Guide Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="nw-card p-4 p-md-5 reveal-on-scroll">
+          <span class="nw-badge-pill mb-2" data-i18n="quiz_mini_badge">Interactive Finder</span>
+          <h2 class="fw-bold mb-2" data-i18n="quiz_mini_title">Find Your Ideal Route in 15 Seconds</h2>
+          <p class="text-muted mb-4" data-i18n="quiz_mini_desc">Pick your preferred landscape and pace — our JS engine matches you with the highest-rated destination.</p>
+          <div class="row g-3 align-items-end">
+            <div class="col-md-5">
+              <label for="finderTerrain" class="form-label small fw-bold" data-i18n="quiz_q_terrain">Preferred Landscape</label>
+              <select id="finderTerrain" class="form-select">
+                <option value="nature">Nature &amp; Lakes</option>
+                <option value="desert">Canyons &amp; Desert</option>
+                <option value="city">City &amp; Culture</option>
+                <option value="alpine">Alpine Peaks</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="finderDays" class="form-label small fw-bold" data-i18n="quiz_q_pace">Trip Duration</label>
+              <select id="finderDays" class="form-select">
+                <option value="1">1 Day Express</option>
+                <option value="2" selected>Up to 2 Days</option>
+                <option value="3">3 Days Expedition</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <button type="button" id="quickMatchBtn" class="btn btn-accent w-100 fw-semibold rounded-pill py-2" data-i18n="quiz_btn_match">Find My Match</button>
+            </div>
+          </div>
+          <div id="quickMatchResult"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-nw">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 text-white fw-bold fs-4 mb-2">
+            <i class="fa-solid fa-compass text-accent"></i>
+            <span>NomadWay</span>
+          </div>
+          <p class="small mb-3" data-i18n="footer_desc">Interactive multi-page travel platform created for Web Technologies 1 (Front End) Final Project at Astana IT University by Askar Nurmukhammed (IT-2514).</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3" data-i18n="footer_pages">Pages</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="destinations.html" data-i18n="nav_destinations">Destinations</a></li>
+            <li><a href="planner.html" data-i18n="nav_planner">Trip Planner</a></li>
+            <li><a href="guides.html" data-i18n="nav_guides">Guides &amp; Quiz</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Book Tour</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white fw-bold mb-3" data-i18n="footer_features">Tech Stack</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li>HTML5 &amp; ARIA Accessibility</li>
+            <li>Bootstrap 5.3 + Custom CSS</li>
+            <li>JavaScript ES6 + jQuery 3.7</li>
+            <li>Open-Meteo REST API + JSON</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="text-white fw-bold mb-3" data-i18n="footer_customizer">Live Theme Customizer</h6>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <button type="button" class="accent-swatch active" data-accent="indigo" style="background:#4f46e5;" aria-label="Indigo accent"></button>
+            <button type="button" class="accent-swatch" data-accent="emerald" style="background:#059669;" aria-label="Emerald accent"></button>
+            <button type="button" class="accent-swatch" data-accent="amber" style="background:#d97706;" aria-label="Amber accent"></button>
+          </div>
+          <div class="small">Astana IT University &bull; IT-2514</div>
+        </div>
+      </div>
+      <div class="pt-3 border-top border-secondary border-opacity-25 d-flex flex-column flex-sm-row justify-content-between small gap-2">
+        <span data-i18n="footer_rights">NomadWay Platform • Prepared by Askar Nurmukhammed (IT-2514)</span>
+        <span>&copy; 2026 Astana IT University</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="nwBackToTop" class="nw-back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="data/fallback-data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

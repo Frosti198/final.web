@@ -1,0 +1,274 @@
+[
+  {
+    "id": "burabay",
+    "category": "nature",
+    "image": "assets/images/img_forest.jpg",
+    "priceUsd": 140,
+    "durationDays": 2,
+    "rating": 4.9,
+    "coords": { "lat": 53.0833, "lon": 70.3000 },
+    "title": {
+      "en": "Burabay Pine Sanctuary",
+      "ru": "Сосновый заповедник Бурабай",
+      "kz": "Бурабай қарағайлы қорығы"
+    },
+    "region": {
+      "en": "Akmola Region",
+      "ru": "Акмолинская область",
+      "kz": "Ақмола облысы"
+    },
+    "difficulty": {
+      "en": "Easy",
+      "ru": "Лёгкий",
+      "kz": "Жеңіл"
+    },
+    "description": {
+      "en": "Granite cliffs, crystal-clear pine lakes, and panoramic hikes over Okzhetpes and Bolektau ridges.",
+      "ru": "Гранитные скалы, хрустальные лесные озёра и панорамные маршруты на Окжетпес и Болектау.",
+      "kz": "Гранитті жартастар, мөлдір қарағайлы көлдер және Оқжетпес пен Бөлектау шыңдарына серуен."
+    },
+    "highlights": {
+      "en": ["Bolektau Summit Panorama", "Lake Borovoe Kayak Loop", "Abylai Khan Glade"],
+      "ru": ["Панорама вершины Болектау", "Каякинг по озеру Боровое", "Поляна Абылай хана"],
+      "kz": ["Бөлектау шыңының панорамасы", "Бурабай көлінде каякинг", "Абылай хан алаңы"]
+    }
+  },
+  {
+    "id": "charyn",
+    "category": "desert",
+    "image": "assets/images/img_nature.jpg",
+    "priceUsd": 185,
+    "durationDays": 2,
+    "rating": 4.8,
+    "coords": { "lat": 43.3522, "lon": 79.0789 },
+    "title": {
+      "en": "Charyn Canyon Expedition",
+      "ru": "Экспедиция в Чарынский каньон",
+      "kz": "Шарын шатқалы экспедициясы"
+    },
+    "region": {
+      "en": "Almaty Region",
+      "ru": "Алматинская область",
+      "kz": "Алматы облысы"
+    },
+    "difficulty": {
+      "en": "Moderate",
+      "ru": "Средний",
+      "kz": "Орташа"
+    },
+    "description": {
+      "en": "Walk through the 12-million-year-old Valley of Castles carved into fiery terracotta sandstone.",
+      "ru": "Прогулка по Долине Замков возрастом 12 млн лет среди огненно-терракотовых скал.",
+      "kz": "12 миллион жылдық Қамалдар аңғарындағы қызыл құмтас жартастары арасындағы саяхат."
+    },
+    "highlights": {
+      "en": ["Valley of Castles Sunset", "Charyn River Eco-Camp", "Relict Ash Grove"],
+      "ru": ["Закат в Долине Замков", "Эко-лагерь у реки Чарын", "Реликтовая ясеневая роща"],
+      "kz": ["Қамалдар аңғарындағы күн батысы", "Шарын өзенінің эколагері", "Ерен тоғайы"]
+    }
+  },
+  {
+    "id": "astana",
+    "category": "city",
+    "image": "assets/images/img_city.jpg",
+    "priceUsd": 95,
+    "durationDays": 1,
+    "rating": 4.7,
+    "coords": { "lat": 51.1694, "lon": 71.4491 },
+    "title": {
+      "en": "Astana Futuristic Skyline",
+      "ru": "Футуристическая Астана",
+      "kz": "Астананың заманауи келбеті"
+    },
+    "region": {
+      "en": "Astana",
+      "ru": "Астана",
+      "kz": "Астана"
+    },
+    "difficulty": {
+      "en": "Easy",
+      "ru": "Лёгкий",
+      "kz": "Жеңіл"
+    },
+    "description": {
+      "en": "Architectural tour across EXPO Nur Alem, Baiterek Tower, Astana IT University hub, and Ishim embankment.",
+      "ru": "Архитектурный маршрут: EXPO Нур Алем, Байтерек, кампус Astana IT University и набережная Есиля.",
+      "kz": "EXPO Нұр Әлем, Бәйтерек, Astana IT University кампусы және Есіл жағалауы бойынша сәулет туры."
+    },
+    "highlights": {
+      "en": ["EXPO Nur Alem Sphere", "Baiterek Observation Deck", "Left Bank Night Lights"],
+      "ru": ["Сфера EXPO Нур Алем", "Смотровая площадка Байтерек", "Огни левого берега"],
+      "kz": ["EXPO Нұр Әлем сферасы", "Бәйтерек шолу алаңы", "Сол жағалау шамдары"]
+    }
+  },
+  {
+    "id": "big-almaty",
+    "category": "alpine",
+    "image": "assets/images/img_weather.jpg",
+    "priceUsd": 160,
+    "durationDays": 1,
+    "rating": 4.9,
+    "coords": { "lat": 43.0506, "lon": 76.9850 },
+    "title": {
+      "en": "Big Almaty Lake Alpine Trek",
+      "ru": "Альпийский трек к БАО",
+      "kz": "Үлкен Алматы көліне альпілік жорық"
+    },
+    "region": {
+      "en": "Ile-Alatau",
+      "ru": "Иле-Алатау",
+      "kz": "Іле Алатауы"
+    },
+    "difficulty": {
+      "en": "Challenging",
+      "ru": "Сложный",
+      "kz": "Күрделі"
+    },
+    "description": {
+      "en": "High-altitude turquoise glacier reservoir at 2,511 meters framed by snow-capped Tian Shan peaks.",
+      "ru": "Высокогорное бирюзовое ледниковое озеро на высоте 2511 м среди снежных пиков Тянь-Шаня.",
+      "kz": "Тянь-Шаньның қарлы шыңдары қоршаған 2511 м биіктіктегі көгілдір мұздық көлі."
+    },
+    "highlights": {
+      "en": ["2,511m Turquoise Basin", "Tian Shan Observatory Ridge", "Alpine Pine Picnic"],
+      "ru": ["Бирюзовая чаша 2511 м", "Обсерватория Тянь-Шаня", "Пикник среди тянь-шаньских елей"],
+      "kz": ["2511 м көгілдір көл", "Тянь-Шань обсерваториясы", "Қарағайлы алқапта демалыс"]
+    }
+  },
+  {
+    "id": "kolsai",
+    "category": "nature",
+    "image": "assets/images/img_camera.jpg",
+    "priceUsd": 220,
+    "durationDays": 3,
+    "rating": 5.0,
+    "coords": { "lat": 42.9875, "lon": 78.3236 },
+    "title": {
+      "en": "Kolsai & Kaindy Emerald Lakes",
+      "ru": "Изумрудные озёра Кольсай и Каинды",
+      "kz": "Көлсай мен Қайыңды зүбәржат көлдері"
+    },
+    "region": {
+      "en": "Almaty Region",
+      "ru": "Алматинская область",
+      "kz": "Алматы облысы"
+    },
+    "difficulty": {
+      "en": "Moderate",
+      "ru": "Средний",
+      "kz": "Орташа"
+    },
+    "description": {
+      "en": "Horseback trails between cascading mountain lakes and the iconic sunken spruce forest of Kaindy.",
+      "ru": "Конные тропы между каскадом горных озёр и знаменитым затопленным еловым лесом Каинды.",
+      "kz": "Тау көлдерінің каскады мен Қайыңдыдағы су астындағы шыршалы орманға атты сапар."
+    },
+    "highlights": {
+      "en": ["Sunken Forest of Kaindy", "Kolsai 1 to Kolsai 2 Hike", "Saty Village Guesthouse"],
+      "ru": ["Затопленный лес Каинды", "Трек Кольсай-1 — Кольсай-2", "Гостеприимство села Саты"],
+      "kz": ["Қайыңды су асты орманы", "Көлсай-1 — Көлсай-2 жаяу жолы", "Саты ауылындағы қонақ үй"]
+    }
+  },
+  {
+    "id": "turkestan",
+    "category": "city",
+    "image": "assets/images/img_campus.jpg",
+    "priceUsd": 175,
+    "durationDays": 2,
+    "rating": 4.8,
+    "coords": { "lat": 43.2973, "lon": 68.2517 },
+    "title": {
+      "en": "Turkestan Silk Road Heritage",
+      "ru": "Наследие Шёлкового пути в Туркестане",
+      "kz": "Түркістан — Ұлы Жібек жолы мұрасы"
+    },
+    "region": {
+      "en": "Turkestan Region",
+      "ru": "Туркестанская область",
+      "kz": "Түркістан облысы"
+    },
+    "difficulty": {
+      "en": "Easy",
+      "ru": "Лёгкий",
+      "kz": "Жеңіл"
+    },
+    "description": {
+      "en": "UNESCO Mausoleum of Khoja Ahmed Yasawi, Karavansaray waterways, and ancient Otrar ruins.",
+      "ru": "Мавзолей Ходжи Ахмеда Ясави (ЮНЕСКО), каналы Караван-сарая и древнее городище Отырар.",
+      "kz": "Қожа Ахмет Ясауи кесенесі (ЮНЕСКО), Керуен-сарай арналары және ежелгі Отырар қалашығы."
+    },
+    "highlights": {
+      "en": ["Yasawi UNESCO Complex", "Otrar Archaeological Park", "Traditional Ceramic Workshop"],
+      "ru": ["Комплекс Ясави (ЮНЕСКО)", "Городище Отырар", "Мастер-класс по керамике"],
+      "kz": ["Ясауи кесенесі (ЮНЕСКО)", "Отырар археологиялық паркі", "Қыш шеберханасы"]
+    }
+  },
+  {
+    "id": "bozzhyra",
+    "category": "desert",
+    "image": "assets/images/img_coffee.jpg",
+    "priceUsd": 290,
+    "durationDays": 3,
+    "rating": 4.9,
+    "coords": { "lat": 43.4167, "lon": 54.0667 },
+    "title": {
+      "en": "Mangystau Bozzhyra Plateau",
+      "ru": "Плато Бозжыра в Мангистау",
+      "kz": "Маңғыстаудағы Бозжыра үстірті"
+    },
+    "region": {
+      "en": "Mangystau",
+      "ru": "Мангистау",
+      "kz": "Маңғыстау"
+    },
+    "difficulty": {
+      "en": "Challenging",
+      "ru": "Сложный",
+      "kz": "Күрделі"
+    },
+    "description": {
+      "en": "Surreal white chalk fangs rising from an ancient seabed with stargazing camps under zero light pollution.",
+      "ru": "Белоснежные меловые останцы на дне древнего океана Тетис и ночёвка под звёздным небом.",
+      "kz": "Ежелгі Тетис мұхитының түбіндегі ақ бор жартастар мен жұлдызды аспан астындағы лагерь."
+    },
+    "highlights": {
+      "en": ["Bozzhyra Fangs Overlook", "Torysh Valley of Balls", "Milky Way Desert Camp"],
+      "ru": ["Панорама «Клыки Бозжыры»", "Долина шаров Торыш", "Ночёвка под Млечным Путём"],
+      "kz": ["Бозжыра азулары панорамасы", "Торыш шарлар алқабы", "Құс жолы астындағы түнеу"]
+    }
+  },
+  {
+    "id": "shymbulak",
+    "category": "alpine",
+    "image": "assets/images/img_workspace.jpg",
+    "priceUsd": 150,
+    "durationDays": 2,
+    "rating": 4.8,
+    "coords": { "lat": 43.1286, "lon": 77.0811 },
+    "title": {
+      "en": "Shymbulak Ridge Workation",
+      "ru": "Горный воркейшн на Шымбулаке",
+      "kz": "Шымбұлақ таулы воркейшні"
+    },
+    "region": {
+      "en": "Almaty",
+      "ru": "Алматы",
+      "kz": "Алматы"
+    },
+    "difficulty": {
+      "en": "Easy",
+      "ru": "Лёгкий",
+      "kz": "Жеңіл"
+    },
+    "description": {
+      "en": "Combine high-speed coworking terraces at 2,260m with Medeu cable car climbs to Talgar Pass (3,200m).",
+      "ru": "Совместите коворкинг-террасы на высоте 2260 м с подъёмом от Медеу на Талгарский перевал (3200 м).",
+      "kz": "2260 м биіктіктегі коворкинг террасаларын Медеу мен Талғар асуына (3200 м) көтерілумен үйлестіріңіз."
+    },
+    "highlights": {
+      "en": ["Talgar Pass 3,200m Gondola", "Medeu Ice Rink Vista", "Mountain Espresso Lounge"],
+      "ru": ["Гондола на Талгарский перевал", "Вид на каток Медеу", "Горная эспрессо-терраса"],
+      "kz": ["Талғар асуына аспалы жол", "Медеу мұз айдыны көрінісі", "Таулы кофе террасасы"]
+    }
+  }
+]
