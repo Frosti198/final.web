@@ -4,6 +4,7 @@
 **University:** Astana IT University  
 **Student:** Askar Nurmukhammed (`IT-2514`)  
 **Instructor:** Daniyar Amantayev  
+**GitHub Repository:** [https://github.com/Frosti198/final.web](https://github.com/Frosti198/final.web)  
 
 ---
 
